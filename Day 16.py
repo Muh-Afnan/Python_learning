@@ -14,3 +14,5 @@ table.add_column("Pokemon_Name", ["Khan"])
 table.add_column("Type", ["Water"])
 table.add_row(["osama", "fire"])
 print(table)
+
+Print (_)
