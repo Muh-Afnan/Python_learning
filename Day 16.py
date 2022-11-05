@@ -1,5 +1,5 @@
 # import turtle
-import prettyTables
+import prettytable
 # timmy = turtle.Turtle()
 # timmy.shape("turtle")
 # timmy.forward(100)
@@ -9,9 +9,8 @@ import prettyTables
 # my_screen = turtle.Screen()
 # my_screen.exitonclick()
 
-table = prettyTables.Table()
-table.add_column("Pokemon_Name", ["Khan"])
-table.add_column("Type", ["Water"])
-table.add_row(["osama", "fire"])
-print(table)
-
+table = prettytable.
+table.add_column("Pokemon_Name", ["Beta","Alpha"])
+table.add_column("Type", ["Water", "Air"])
+table.add_row(["Osama", "Fire"])
+table.add_row(["Picachu", "Electric"])
