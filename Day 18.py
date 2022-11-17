@@ -6,8 +6,7 @@
 # timmy = Turtle()
 # timmy.shape("classic")
 # timmy.color("green")
-
-
+import turtle
 # terry = Turtle()
 # terry.shape("turtle")
 # terry.color("red")
@@ -80,7 +79,7 @@
 # def angle(sides):
 #     return 360/sides
 
-colors = ["aquamarine", "deep sky blue", "lawn green", "midnight blue", "dark olive green", "blue violet"]
+# colors = ["aquamarine", "deep sky blue", "lawn green", "midnight blue", "dark olive green", "blue violet"]
 # # direction = ["90","180", "-90", "-180", "270", "-270", '360', '-360']
 # direction = [0, 90, 180, 270]
 # direction = [left, Right]
@@ -147,11 +146,55 @@ colors = ["aquamarine", "deep sky blue", "lawn green", "midnight blue", "dark ol
 
 ###This code will not work in repl.it as there is no access to the colorgram package here.###
 ##We talk about this in the video tutorials##
-import colorgram
 
-rgb_colors = []
-colors = colorgram.extract('image.jpg', 30)
-for color in colors:
-    rgb_colors.append(color.rgb)
+from turtle import Turtle, Screen
+from random import choice
+# import colorgram
+#
+# rgb_colors = []
+# colors = colorgram.extract('image.jpg', 30)
+# for color in colors:
+#     r = color.rgb.r
+#     g = color.rgb.g
+#     b = color.rgb.b
+#     new_color = (r, g, b)
+#     rgb_colors.append(new_color)
+#
+# print(rgb_colors)
+turtle.colormode(255)
+extracted_colors = [(202, 164, 110), (236, 239, 243), (149, 75, 50), (222, 201, 136), (53, 93, 123), (170, 154, 41), (138, 31, 20), (134, 163, 184), (197, 92, 73), (47, 121, 86), (73, 43, 35), (145, 178, 149), (14, 98, 70), (232, 176, 165), (160, 142, 158), (54, 45, 50), (101, 75, 77), (183, 205, 171), (36, 60, 74), (19, 86, 89), (82, 148, 129), (147, 17, 19), (27, 68, 102), (12, 70, 64), (107, 127, 153), (176, 192, 208), (168, 99, 102)]
+timmy = Turtle()
+# turtle.dot(5, "Green")
+# turtle.forward(100)
+# color = choice(extracted_colors)
+# color = choice(extracted_colors)
+# print(color)
+# for _ in range (10):
+#     timmy.penup()
+#     timmy.dot(20, choice(extracted_colors))
+#     timmy.fd(50)
+turtle.colormode(255)
+extracted_colors = [(202, 164, 110), (236, 239, 243), (149, 75, 50), (222, 201, 136), (53, 93, 123), (170, 154, 41), (138, 31, 20), (134, 163, 184), (197, 92, 73), (47, 121, 86), (73, 43, 35), (145, 178, 149), (14, 98, 70), (232, 176, 165), (160, 142, 158), (54, 45, 50), (101, 75, 77), (183, 205, 171), (36, 60, 74), (19, 86, 89), (82, 148, 129), (147, 17, 19), (27, 68, 102), (12, 70, 64), (107, 127, 153), (176, 192, 208), (168, 99, 102)]
+timmy = Turtle()
+timmy.hideturtle()
+timmy.penup()
+timmy.setheading(225)
+timmy.forward(300)
+timmy.setheading(0)
+timmy.speed(0)
 
-print(rgb_colors)
+timmy.showturtle()
+var = 0
+for _ in range (10):
+    var += 1
+    for _ in range (10):
+        timmy.dot(20, choice(extracted_colors)); timmy.penup(); timmy.fd(50); timmy.dot(20, choice(extracted_colors))
+    if var < 10:
+        timmy.setheading(90)
+        timmy.forward(50)
+        timmy.setheading(180)
+        timmy.forward(500)
+        timmy.setheading(0)
+
+screen = Screen()
+screen.exitonclick()
