@@ -1,6 +1,6 @@
 import time
-from turtle import Screen, Turtle
-from snake import Snake
+from turtle import Screen
+from snake20 import Snake
 
 screen = Screen()
 screen.setup(width=600, height=600)
@@ -29,6 +29,6 @@ while game_is_on:
     #     new_y = snake_health[snake_num-1].ycor()
     #     snake_health[snake_num].goto(x=new_x, y=new_y)
     # snake_health[0].forward(20)
-    # snake.move()
+    snake.move()
 
 screen.exitonclick()

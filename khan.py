@@ -16,7 +16,7 @@ class Snake:
             self.segments.append(new_seg)
 
     def move(self):
-        for snake_num in range(len(self.segments) - 1, 0, -1):
+        for snake_num in range(len(self.segments)-1, 0, -1):
             new_x = self.segments[snake_num - 1].xcor()
             new_y = self.segments[snake_num - 1].ycor()
             self.segments[snake_num].goto(x=new_x, y=new_y)
