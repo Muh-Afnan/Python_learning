@@ -7,7 +7,12 @@ screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("Welcome to the Snake Game!")
 screen.tracer(0)
-snake = Snake()
+
+screen.listen()
+screen.onkey("Up")
+screen.onkey("Down")
+screen.onkey("Left")
+screen.onkey("Right")
 
 # location = [0, -20, 20]
 #
