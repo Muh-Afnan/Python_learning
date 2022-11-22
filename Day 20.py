@@ -8,11 +8,14 @@ screen.bgcolor("black")
 screen.title("Welcome to the Snake Game!")
 screen.tracer(0)
 
+snake = Snake()
+
 screen.listen()
-screen.onkey("Up")
-screen.onkey("Down")
-screen.onkey("Left")
-screen.onkey("Right")
+
+screen.onkey(fun=snake.up, key="Up")
+screen.onkey(fun=snake.down, key="Down")
+screen.onkey(fun=snake.left, key="Left")
+screen.onkey(fun=snake.right, key="Right")
 
 # location = [0, -20, 20]
 #
