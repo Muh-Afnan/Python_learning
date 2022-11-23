@@ -9,10 +9,10 @@ class Food(Turtle):
         self.shapesize(stretch_len=0.5,stretch_wid=0.5)
         self.color("blue")
         self.speed("fastest")
-        self.food_loc()
+        self.refresh()
         self.score = 0
 
-    def food_loc(self):
+    def refresh(self):
         self.goto(x=random.randrange(-280 , 280),y=random.randrange(-280 , 280))
 
     def count_score(self):
