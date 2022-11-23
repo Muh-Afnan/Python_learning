@@ -22,29 +22,31 @@ screen.onkey(fun=snake.down, key="Down")
 screen.onkey(fun=snake.left, key="Left")
 screen.onkey(fun=snake.right, key="Right")
 
-# location = [0, -20, 20]
-#
-# snake_health = []
-#
-# for index in range (0, 3):
-#     snake = Turtle("square")
-#     snake.color("white")
-#     snake.penup()
-#     snake.goto(x= (location[index]), y=0)
-#     snake_health.append(snake)
 
 game_is_on = True
 while game_is_on:
     screen.update()
     time.sleep(0.1)
-    # for snake_num in range (len(snake_health)-1, 0, -1):
-    #     new_x = snake_health[snake_num-1].xcor()
-    #     new_y = snake_health[snake_num-1].ycor()
-    #     snake_health[snake_num].goto(x=new_x, y=new_y)
-    # snake_health[0].forward(20)
     snake.move()
     if snake.head.distance(food) < 15:
         food.refresh()
+        snake.extend()
         score.count_score()
+
+    if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
+        game_is_on = False
+        score.game_is_over()
+
+    # for segment in snake.segments:
+    #     if segment == snake.head:
+    #         pass
+    #     elif snake.head.distance(segment) < 10:
+    #         game_is_on = False
+    #         score.game_is_over()
+    for segment in snake.segments[1:]:
+        if snake.head.distance(segment) < 10:
+            game_is_on = False
+            score.game_is_over()
+
 
 screen.exitonclick()
